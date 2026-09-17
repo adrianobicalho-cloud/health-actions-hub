@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlimentosRouteImport } from './routes/alimentos'
+import { Route as JogoRouteImport } from './routes/jogo'
+import { Route as MeuDiaRouteImport } from './routes/meu-dia'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +24,49 @@ const AlimentosRoute = AlimentosRouteImport.update({
   path: '/alimentos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JogoRoute = JogoRouteImport.update({
+  id: '/jogo',
+  path: '/jogo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MeuDiaRoute = MeuDiaRouteImport.update({
+  id: '/meu-dia',
+  path: '/meu-dia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alimentos': typeof AlimentosRoute
+  '/jogo': typeof JogoRoute
+  '/meu-dia': typeof MeuDiaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alimentos': typeof AlimentosRoute
+  '/jogo': typeof JogoRoute
+  '/meu-dia': typeof MeuDiaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alimentos': typeof AlimentosRoute
+  '/jogo': typeof JogoRoute
+  '/meu-dia': typeof MeuDiaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/alimentos'
+  fullPaths: '/' | '/alimentos' | '/jogo' | '/meu-dia'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/alimentos'
-  id: '__root__' | '/' | '/alimentos'
+  to: '/' | '/alimentos' | '/jogo' | '/meu-dia'
+  id: '__root__' | '/' | '/alimentos' | '/jogo' | '/meu-dia'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlimentosRoute: typeof AlimentosRoute
+  JogoRoute: typeof JogoRoute
+  MeuDiaRoute: typeof MeuDiaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +85,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AlimentosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/jogo': {
+      id: '/jogo'
+      path: '/jogo'
+      fullPath: '/jogo'
+      preLoaderRoute: typeof JogoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/meu-dia': {
+      id: '/meu-dia'
+      path: '/meu-dia'
+      fullPath: '/meu-dia'
+      preLoaderRoute: typeof MeuDiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlimentosRoute: AlimentosRoute,
+  JogoRoute: JogoRoute,
+  MeuDiaRoute: MeuDiaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
