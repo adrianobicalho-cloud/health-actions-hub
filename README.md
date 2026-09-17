@@ -1,13 +1,14 @@
-# Health Actions Hub
+# Saúde em Ação
 
-clonar o projeto:
-https://saude-em-acao.lovable.app/
+Construa um site para um projeto chamado "Saúde em Ação", preciso de 1 página dedicada ao problema que procuramos resolver com base na ODS 3 da ONU: agrotóxicos presentes nos alimentos que causam riscos a saúde; outra página para cards, cada um com um alimento específico, os agrotóxicos mais utilizados nele e seus riscos para saúde; uma página para um jogo que criamos aqui no Lovable mesmo e a última página para se informar com notícias recentes de problemas de saúde causados pelos agrotóxicos. Porém, prefiro te dizer quais fontes usar, como faço isso?
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://saude-em-acao.lovable.app
+
 ## Build with Lovable
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e2720608-f1c2-442c-b22c-19b6570ba12a).
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/c32753ad-ae13-449e-b8a0-ba0e4c9f8b82).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
 - **Stay in sync**: every change made in Lovable is committed straight to this repository.
